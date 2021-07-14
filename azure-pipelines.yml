@@ -10,8 +10,14 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  buildConfiguration: 'Release'
+        buildConfiguration: 'Release'
 
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
+-task
+name:UseDotNet@2
+displayName:'Run npm install'
+inputs:
+displayName: 'Test'
+
